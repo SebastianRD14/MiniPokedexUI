@@ -6,14 +6,142 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+    <ScrollView
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Título -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <!-- EditText con Hint -->
+            <EditText
+                android:id="@+id/etQuery"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:hint="@string/search_hint"
+                android:inputType="text" />
+
+            <!-- Acciones principales -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/btn_search" />
+
+                <ImageButton
+                    android:id="@+id/btnRandom"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="12dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/btn_random"
+                    android:src="@android:drawable/ic_menu_rotate" />
+            </LinearLayout>
+
+            <!-- Opciones de imagen -->
+            <CheckBox
+                android:id="@+id/cbShiny"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/shiny" />
+
+            <ToggleButton
+                android:id="@+id/tgSpriteArtwork"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textOff="@string/sprite_artwork_off"
+                android:textOn="@string/details_switch_on" />
+
+            <RadioGroup
+                android:id="@+id/rgSide"
+                android:orientation="horizontal"
+                android:layout_marginTop="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/rbFront"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/front" />
+
+                <RadioButton
+                    android:id="@+id/rbBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="@string/back" />
+            </RadioGroup>
+
+            <Switch
+                android:id="@+id/swDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:text="@string/details_switch_on" />
+
+            <!-- Imagen del Pokémon -->
+            <ImageView
+                android:id="@+id/ivPokemon"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="12dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/iv_pokemon"
+                android:scaleType="fitCenter" />
+
+            <!-- Info básica -->
+            <TextView
+                android:id="@+id/tvBasic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/tv_basic"
+                android:textStyle="bold" />
+
+            <!-- Detalles (ocultos con el Switch) -->
+            <TextView
+                android:id="@+id/tvDetails"
+                android:text="Detalles (tipo, peso, habilidades...)"
+                android:visibility="gone"
+                android:layout_marginTop="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- Limpiar -->
+            <Button
+                android:id="@+id/btnClear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/btn_clear" />
+
+        </LinearLayout>
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
