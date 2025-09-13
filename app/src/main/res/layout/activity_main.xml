@@ -73,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:textOff="@string/sprite_artwork_off"
-                android:textOn="@string/details_switch_on" />
+                android:textOn="@string/sprite_artwork_on" />
 
             <RadioGroup
                 android:id="@+id/rgSide"
